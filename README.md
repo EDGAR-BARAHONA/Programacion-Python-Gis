@@ -1,2 +1,3 @@
 # ProgrammacionPython
-Conjunto de algoritmos creador en python para difernetes fines 
+Conjunto de archivos (noteboks/py) creados en python con difernetes finalidad. Dentro de los cuales encontramos los siguientes:
+* sssssss
