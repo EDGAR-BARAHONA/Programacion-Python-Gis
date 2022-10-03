@@ -1,6 +1,7 @@
 # ProgramacionPython
 Conjunto de archivos (noteboks/py) creados en python con diferente finalidad. 
-- Juego Tatati/Triki: Este juego programado usando python permite a un usuario competir contrra una IA.
+- Manipulación de archivos: En este libro se encuentran algunos metodos simples para la lectura y escritura de archivos .TXT .CSV y .JSON.
+- Juego Tatati/Triki: Este juego programado usando python permite a un usuario competir contrra una IA, En este se hacen uso de listas, diccionarios y ciclos for..
 
 
 
