@@ -2,24 +2,41 @@ import random
 import sys
 import os
 
-#CONTROLA LO RELACIONADO A EL LANZAMIETO DE LA PERSONA
-def lanzamiento_Persona():
-    valor = int(input("ingrese la posicion en la cual desea marcar: "))
-    if (posicion.get(valor) == "_"):
-        posicion.update({valor:mjugador})
-        Tablero()
+
+#PERMITE SELECCIONAR LA LETRA CON LA CUAL JUGARA EL USUARIO
+def Seleccion_Letra():
+    marcas_jugadores = {1:"X",2:"O"}
+    seleccion =""
+    while not (seleccion == 1 or  seleccion == 2):
+        seleccion = input("Ingrese 1 si Desea seleccionar X u 2 si desea seleccionar O: ")
+        while not (seleccion.isdigit()):
+            seleccion = input(" Usted no ha ingresado un digito, Ingrese 1 si Desea seleccionar X u 2 si desea seleccionar O: ")
+        seleccion = int(seleccion)    
+
+
+    if (seleccion ==1):
+        marcajugador = marcas_jugadores.get(1)
+        marcamaquina = marcas_jugadores.get(2)
+        print("usted eligio ", marcajugador, "por lo cual la maquina lanzara con ",marcamaquina)
     else:
-        while not (posicion.get(valor) =="_" and valor <= 9 ):
-            print("error la posicion ", valor, "se encuentra ocupada , o ", valor, " puede ser un valor superior a 9")
-            valor = int(input("ingrese una posicion valida en la cual desea marcar: "))
-        posicion.update({valor:mjugador})    
-        Tablero()
+        marcajugador = marcas_jugadores.get(2)
+        marcamaquina = marcas_jugadores.get(1)
+        print("usted eligio ", marcajugador, "por lo cual la maquina lanzara con ",marcamaquina)
+    return marcajugador , marcamaquina
+
+
+#DEFINE UNA DICCIONARIO DE POSICIONES
+def defposiciones():
+    posiciones={1:"_",2:"_",3:"_",4:"_",5:"_",6:"_",7:"_",8:"_",9:"_"}
+    return posiciones
+
 
 #PINTA EL TABLERO DE JUEGO
 def Tablero():
     for pos in range(1,10):
         sys.stdout.write("|" + posicion[pos])
         if (pos%3==0): print("|\n")
+
 
 #EVALUA SI EXISTE UN GANADOR
 def ganador(posiciones2,marca):
@@ -35,6 +52,29 @@ def ganador(posiciones2,marca):
         return True
     else:
         return False
+
+
+#CONTROLA LO RELACIONADO A EL LANZAMIETO DE LA PERSONA
+def lanzamiento_Persona():
+    valor = input("ingrese la posicion en la cual desea marcar: ")
+    while not (valor.isdigit()):
+        valor = input(" No ha ingresado un numero entre 1 y 9, ingrese nuevamente la posicion en la cual desea marcar: ")
+
+    valor = int(valor)
+
+    if (posicion.get(valor) == "_"):
+        posicion.update({valor:mjugador})
+        Tablero()
+    else:
+        while not (posicion.get(valor) =="_" and valor <= 9 ):
+            print("error la posicion ", valor, "se encuentra ocupada , o ", valor, " puede ser un valor superior a 9")
+            valor = input("ingrese una posicion valida en la cual desea marcar: ")
+            while not (valor.isdigit()):
+                valor = input(" No ha ingresado un numero entre 1 y 9, ingrese nuevamente la posicion en la cual desea marcar: ")
+            valor = int(valor)
+        posicion.update({valor:mjugador})    
+        Tablero()
+
 
 #MANEJA TODA LA IA DEL JUEGO
 def lanzamiento_Maquina():
@@ -81,26 +121,6 @@ def lanzamiento_Maquina():
 
     Tablero()
 
-#DEFINE UNA DICCIONARIO DE POSICIONES
-def defposiciones():
-    posiciones={1:"_",2:"_",3:"_",4:"_",5:"_",6:"_",7:"_",8:"_",9:"_"}
-    return posiciones
-
-#PERMITE SELECCIONAR LA LETRA CON LA CUAL JUGARA EL USUARIO
-def Seleccion_Letra():
-    marcas_jugadores = {1:"X",2:"O"}
-    seleccion =""
-    while not (seleccion == 1 or  seleccion == 2):
-        seleccion = int(input("Ingrese 1 si Desea seleccionar X u 2 si desea seleccionar O: "))
-    if (seleccion ==1):
-        marcajugador = marcas_jugadores.get(1)
-        marcamaquina = marcas_jugadores.get(2)
-        print("usted eligio ", marcajugador, "por lo cual la maquina lanzara con ",marcamaquina)
-    else:
-        marcajugador = marcas_jugadores.get(2)
-        marcamaquina = marcas_jugadores.get(1)
-        print("usted eligio ", marcajugador, "por lo cual la maquina lanzara con ",marcamaquina)
-    return marcajugador , marcamaquina
 
 #CONTROLA LO RELACIONADO A LAS JUGADAS, QUIEN LANZA PRIMERO
 def jugada():
@@ -169,12 +189,16 @@ def jugada():
 
 #CONTROLA EL JUEGO COMO TAL, SI JUEGA DE NUEVO O TERMINA
 def juego ():
-    print("Bienvenido al juego del TA-TE-TI")
+    print("Bienvenido al juego del  TRIKI o TA-TE-TI")
     print("")
     continuar = 1
     while (continuar == 1):
         jugada()
-        continuar = int(input("Presione 1 si desea Jugar de nuevo, de lo contrario presion cualquier tecla: "))
+        continuar = input("Presione 1 si desea Jugar de nuevo, de lo contrario presion cualquier tecla: ")
+        if (continuar.isdigit() and int(continuar) ==1 ):
+            continuar = int(continuar)
+        else:
+            break
     print("juego Termiando")
 
 #LLAMA AL JUEGO DEL TATETI
