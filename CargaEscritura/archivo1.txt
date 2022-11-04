@@ -1,3 +1,0 @@
-Pyhon es un gran lenguaje de programación.
-Permite escribir docigo de forma simple y sencilla.
-Usando algoritmos par labores como analitica y ciencia de datos.
