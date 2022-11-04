@@ -1,4 +1,4 @@
-# ProgramacionPython
+# Programacion-Python-Gis
 Conjunto de archivos (noteboks/py) creados en python con diferente finalidad. 
 
 Dentro de la carpeta python, se encuentran archivos de codigo y notebooks con diferente finalidad, dentro de este se puede encontrar:
