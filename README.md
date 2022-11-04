@@ -7,7 +7,7 @@ Dentro de la carpeta python, se encuentran archivos de codigo y notebooks con di
 
 Dentro de la carpeta Python-ArcPy encontraras notebooks relacionados a la programación en python usando la libreria **Arcpy** de ArcGIS la cual permite trabajar con diferentes tipos de archivos geograficos. Dentro de esta carpeta podras encontrar los soguientes notebooks:
 - ArcPy-AtributosArchivos: en el cual se muestran comandos basicos relacionados a la manipulación de atributos de archivos tipos shapefile y raster.
-- ArcPyCursores: En el cual se hace una introduccion a el manejo de información de tablas de atributos usando cursores, en este se usan comandos simples y se hace algunas referencias a la exportación de tablas de atributos a excel usando la libreria **csv.**
+- ArcPy-Cursores: En el cual se hace una introduccion a el manejo de información de tablas de atributos usando cursores, en este se usan comandos simples y se hace algunas referencias a la exportación de tablas de atributos a excel usando la libreria **csv.**
 
 
 
