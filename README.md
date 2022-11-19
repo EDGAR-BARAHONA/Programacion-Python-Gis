@@ -9,6 +9,7 @@ Dentro de la carpeta Python_Geografico encontraras notebooks relacionados a la p
 - ArcPy-AtributosArchivos: en el cual se muestran comandos basicos relacionados a la manipulación de atributos de archivos tipos shapefile y raster.
 - ArcPy-Cursores: En el cual se hace una introduccion a el manejo de información de tablas de atributos usando cursores, en este se usan comandos simples y se hace algunas referencias a la exportación de tablas de atributos a excel usando la libreria **csv.**
 - Adquición de datos Sentinel usando SentinelSat: Notebook con el paso a paso del proceso de busqueda adquición y concatenación de datos raster Usando las librerias SentinelSat y Rasterio.
+- Manejo de datos con Rasterio: Notebook en el cual se trabaja el manejo de datos raster con la libreria Rasterio.
 
 
 
